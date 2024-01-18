@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VKR URL Shortener</title>
+    <meta name="description" content="VKR URL Shortener - Free URL shortening service designed by Vinay Kumar. Shorten your URLs with ease.">
+    <meta name="keywords" content="URL Shortener, Free URL Shortener, VKR URL Shortener, Vinay Kumar">
+    <meta name="author" content="Vinay Kumar">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #262626;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-style: italic;
+            font-weight: bold;
+            font-size: 2.5em;
+            margin-top: 20px;
+            text-align: center;
+            animation: fadeInUp 1s;
+            color: #4CAF50;
+            transition: color 0.3s;
+            margin: 7%;
+        }
+
+        h1:hover {
+            color: #45a049;
+        }
+
+        nav {
+            position: fixed;
+            display: flex;
+            top: 0;
+            width: 100%;
+            height: 80px;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1000;
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            list-style-type: none;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #4CAF50;
+        }
+
+        div {
+            text-align: center;
+            margin-top: 20px;
+            animation: fadeInUp 1.5s;
+        }
+
+        input {
+            width: 80%;
+            padding: 12px;
+            margin-top: 10px;
+            box-sizing: border-box;
+            font-size: 1.5em;
+            text-align: center;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-size: 1.5em;
+            line-height: 1.4;
+            width: 80%;
+            box-sizing: border-box;
+            background-color: #262626;
+            animation: fadeIn 2s;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        p:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: black;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        footer:hover {
+            background-color: #45a049;
+        }
+
+        #message {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #qrcode {
+            margin-top: 20px;
+        }
+
+        #downloadBtn {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            color: #fff;
+            background-color: black;
+            border: none;
+            border-radius: 50px;
+            transition: background-color 0.3s;
+        }
+
+        #downloadBtn:hover {
+            background-color: #45a049;
+        }
+
+        #faq {
+            margin-top: 30px;
+            text-align: left;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        #faq h2 {
+            color: #4CAF50;
+        }
+
+        #faq p {
+            margin-top: 10px;
+        }
+
+        /* Media Query for Mobile Responsiveness */
+        @media only screen and (max-width: 1000px) {
+            input {
+                width: 100%;
+            }
+
+            p {
+                width: 100%;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="right">
+            <ul>
+                <li><a href="https://vkrhub.pw">Home</a></li>
+                <li><a href="https://git.vinaykumar.tech">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="https://vinaykumar.tech/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h1 class="message">URL Shortener</h1>
+    <div>
+        <input name="text" type="url" id="linkinput" placeholder="Paste a URL to shorten">
+        <input type="submit" id="myinput" value="Shorten">
+    </div>
+    <p id="message"></p>
+    <div id="qrcode"></div>
+    <button id="downloadBtn">Download QR</button>
+
+    <div id="faq">
+        <h2>Frequently Asked Questions (FAQs)</h2>
+        <p><strong>Q: What is VKR URL Shortener?</strong></p>
+        <p>A: VKR URL Shortener is a free URL shortening service designed by Vinay Kumar. It allows you to easily shorten long URLs.</p>
+
+        <p><strong>Q: How does it work?</strong></p>
+        <p>A: Simply paste your long URL into the input field and click "Shorten." VKR URL Shortener will generate a short URL and a QR code for your convenience.</p>
+
+        <p><strong>Q: Can I customize the short URL?</strong></p>
+        <p>A: Currently, customization features are not available. Short URLs are automatically generated based on the provided long URL.</p>
+
+        <p><strong>Q: Is VKR URL Shortener free to use?</strong></p>
+        <p>A: Yes, VKR URL Shortener is completely free to use.</p>
+
+        <p><strong>Q: How can I contact support?</strong></p>
+        <p>A: For support or inquiries, you can visit the Contact page on Vinay Kumar's website: <a href="https://vinaykumar.tech/contact" target="_blank">Contact</a>.</p>
+    </div>
+
+    <script>
+        document.getElementById("myinput").onclick = function () {
+            var link = document.getElementById("linkinput").value;
+            var data = {
+                "domain": "go.vkrhub.pw",
+                "originalURL": link,
+                "allowDuplicates": false
+            };
+
+            fetch('https://api.short.cm/links/public', {
+                method: 'post',
+                headers: {
+                    'accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'authorization': 'pk_qExLUDZdyNPOjqQA'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    var shortURL = data.shortURL;
+                    document.getElementById("message").innerHTML = "Your short link is: " + shortURL;
+
+                    // Create a copy button
+                    var copyButton = document.createElement("button");
+                    copyButton.textContent = "Copy";
+                    copyButton.onclick = function () {
+                        // Copy the short URL to the clipboard
+                        var textarea = document.createElement("textarea");
+                        textarea.value = shortURL;
+                        document.body.appendChild(textarea);
+                        textarea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textarea);
+                        alert("Copied to clipboard: " + shortURL);
+                    };
+
+                    // Append the copy button to the message div
+                    document.getElementById("message").appendChild(copyButton);
+
+                    // Create a QR code for the short URL
+                    var qrcode = new QRCode(document.getElementById("qrcode"), {
+                        text: shortURL,
+                        width: 128,
+                        height: 128
+                    });
+                });
+
+            document.getElementById("linkinput").value = '';
+        }
+
+        // Download QR Code
+        document.getElementById('downloadBtn').addEventListener('click', function () {
+            var canvas = document.querySelector('#qrcode canvas');
+            var downloadBtn = document.getElementById('downloadBtn');
+            var image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+            var link = document.createElement('a');
+            link.download = 'QRCode.png';
+            link.href = image;
+            link.click();
+        });
+    </script>
+    <!-- Include this script for QR code generation -->
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+    <footer>
+        &copy; 2024 Vinay Kumar | All rights reserved
+    </footer>
+</body>
+
+</html>
