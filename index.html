@@ -4,25 +4,25 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Cutly.me - Your Free URL Shortener for Quick and Easy Links">
-	<meta name="keywords" content="cutly.me, Free URL shortener, link shortener, short links, Custom Domains, Free">
+	<meta name="description" content="Cutly.me - Your URL Shortener for Quick and Easy Links">
+	<meta name="keywords" content="cutly.me, URL shortener, link shortener, short links">
 	<meta name="author" content="Vinay Kumar">
 
 	<!-- Open Graph metadata for social sharing -->
-	<meta property="og:title" content="Cutly.me - URL Shortener with Custom Domain">
+	<meta property="og:title" content="Cutly.me - URL Shortener">
 	<meta property="og:description" content="Shorten and share your links with Cutly.me">
 	<meta property="og:image" content="https://cutly.me/logo.png">
 	<meta property="og:url" content="https://cutly.me">
 
 	<!-- Twitter Card metadata for social sharing -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Cutly.me - Free URL Shortener">
+	<meta name="twitter:title" content="Cutly.me - URL Shortener">
 	<meta name="twitter:description" content="Shorten and share your links with Cutly.me">
 	<meta name="twitter:image" content="https://cutly.me/logo.png">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="https://cutly.me/logo.png">
-	<title>Cutly.me - Free URL Shortener with Custom Domain</title>
+	<title>Cutly.me - URL Shortener</title>
 
 	<style>
 		body {
@@ -220,7 +220,45 @@
 			padding: 10px;
 			background-color:  rgb(16, 0, 43);
 			color: #fff;
+			width:100%;
 		}
+
+		.footer {
+            background-color: rgb(16, 0, 43);;
+        }
+
+        .footer {
+            display: flex;
+            padding: 23px 122px;
+            justify-content: space-evenly;
+			align-items: center;
+        }
+
+        .footer ul {
+            list-style: none;
+
+        }
+
+        footer .footer-second a {
+            text-decoration:none;
+            color: white;
+        }
+
+        footer .footer-second a:hover {
+            color: red;
+            font-size: 1.1rem;
+        }
+
+        .footer>div {
+            width: 223px;
+        }
+
+        footer .footer-rights {
+            text-align: center;
+            color: gray;
+            padding: 12px 0;
+        }
+
 	</style>
 </head>
 
@@ -237,7 +275,9 @@
 		<a href="logo.png" class="active">Cutly.me URL Shortener</a>
 		<!-- Navigation links (hidden by default) -->
 		<div id="myLinks">
-			<a href="#news">News</a>
+			<a href="https://cutly.me">Home</a>
+			<a href="https://cutly.me">Login</a>
+			<a href="https://cutly.me">Register</a>
 			<a href="https://vinaykumar.tech/contact">Contact</a>
 			<a href="https://git.vinaykumar.tech">About</a>
 		</div>
@@ -249,7 +289,6 @@
 
 
 	<main>
-		<span class="glow_circle"></span>
 		<section class="url-shortener">
 			<div class="input-container">
 				<input type="url" id="originalURL" placeholder="Paste a URL to shorten">
@@ -267,16 +306,45 @@
 			<button id="downloadBtn" class="hidden">Download QR</button>
 
 		</section>
+		
 	</main>
-
-	<footer>
-		<p>&copy; 2024 Cutly.me | All rights reserved</p>
-		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram"
-			viewBox="0 0 16 16">
-			<path
-				d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
-		</svg>
-	</footer>
+<footer>
+			<div class="footer">
+				<div class="footer-first">
+					CUTLY.ME
+				</div>
+				<div class="footer-second">
+					<ul>
+						<li><a href="https://cutly.me">Home</a></li>
+						<li><a href="https://git.vinaykumar.tech">About</a></li>
+						<li><a href="https://cutly.me">Services</a></li>
+						
+					</ul>
+				</div>
+				<div class="footer-second">
+					<ul>
+						<li><a href="https://www.linkedin.com/in/vinaykumar8269">Linkedin</a></li>
+						<li><a href="https://github.com/codes4vkr">Github</a></li>
+						<li><a href="mailto:contact@vinaykumar.tech">Email</a></li>
+						
+					</ul>
+				</div>
+				<div class="footer-second">
+					<ul>
+						<li><a href="https://vinaykumar.tech">Website</a></li>
+						<li><a href="https://www.instagram.com/vinay.kumar.ig/">Instagram</a></li>
+						
+						<li><a
+								href="https://f003f503.sibforms.com/serve/MUIFAGreNQzAPREB6xxscpfQrF4cckcVXhKu4vzkjylUCCV5CeZhwnq5xRGQxgnOqUHicy1tvnqogH9DG9Jc7RL4e6HX7xwiXdPdUoxc8dRk2gKkClO5w-QXz3yL4XqX48k2AcWdIpLRYXFVr16-mq0fIyNqyo7neCUKiaoGViNdmIbIrXroSBdAjW2kReR8sSCqYcn5RgXAMW3L">Newsletter</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-rights">
+				<p>&copy; 2024 Cutly.me | All rights reserved</p>
+			</div>
+		</footer>
+	
 
 	<script>
 		/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
