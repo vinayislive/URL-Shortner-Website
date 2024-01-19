@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cutly.me - Your URL Shortener for Quick and Easy Links">
     <meta name="keywords" content="cutly.me, URL shortener, link shortener, short links">
@@ -22,319 +23,328 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="URL_TO_YOUR_FAVICON">
      <title>Cutly.me - URL Shortener</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #262626;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
+	
+	<style>
+		body {
+			font-family: 'Arial', sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: whitesmoke;
+		}
 
-        h1 {
-            font-style: italic;
-            font-weight: bold;
-            font-size: 2.5em;
-            margin-top: 20px;
-            text-align: center;
-            animation: fadeInUp 1s;
-            color: #4CAF50;
-            transition: color 0.3s;
-            margin: 7%;
-        }
+		/* Style the navigation menu */
+		.topnav {
+			overflow: hidden;
+			background-color: #333;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			/* Make the menu full width */
+			z-index: 1;
+		}
 
-        h1:hover {
-            color: #45a049;
-        }
+		/* Hide the links inside the navigation menu (except for logo/home) */
+		.topnav #myLinks {
+			display: none;
+		}
 
-        nav {
-            position: fixed;
-            display: flex;
-            top: 0;
-            width: 100%;
-            height: 80px;
-            justify-content: space-around;
-            align-items: center;
-            z-index: 1000;
-            background-color: #333;
-        }
+		/* Style navigation menu links */
+		.topnav a {
+			color: white;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+			display: block;
+		}
 
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: flex-end;
-        }
+		/* Style the hamburger menu */
+		.topnav a.icon {
+			background: black;
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
 
-        nav ul li {
-            list-style-type: none;
-            margin: 0 10px;
-        }
+		/* Add a grey background color on mouse-over */
+		.topnav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
 
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 1.2em;
-            transition: color 0.3s;
-        }
+		/* Style the active link (or home/logo) */
+		.active {
+			background-color: #04AA6D;
+			color: white;
+		}
 
-        nav ul li a:hover {
-            color: #4CAF50;
-        }
+		header {
+			background-color: #343a40;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
 
-        div {
-            text-align: center;
-            margin-top: 20px;
-            animation: fadeInUp 1.5s;
-        }
+		main {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 80vh;
+			margin-top: 80px;
+			/* Adjust margin-top to make space for the fixed menu */
+		}
 
-        input {
-            width: 80%;
-            padding: 12px;
-            margin-top: 10px;
-            box-sizing: border-box;
-            font-size: 1.5em;
-            text-align: center;
-            border: 2px solid #4CAF50;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
-        }
+		.url-shortener {
+			background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+			text-align: center;
+		}
 
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+		.input-container {
+			margin-bottom: 20px;
+		}
 
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
+		input {
+			width: 60%;
+			padding: 10px;
+			border: 1px solid #ced4da;
+			border-radius: 5px;
+		}
 
-        p {
-            font-size: 1.5em;
-            line-height: 1.4;
-            width: 80%;
-            box-sizing: border-box;
-            background-color: #262626;
-            animation: fadeIn 2s;
-            color: #fff;
-            transition: background-color 0.3s;
-        }
+		button {
+			padding: 10px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
 
-        p:hover {
-            background-color: #45a049;
-        }
+		button:hover {
+			background-color: #0056b3;
+		}
 
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: black;
-            color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            transition: background-color 0.3s;
-        }
+		button:disabled {
+			/* Style for disabled state, e.g., showing loading spinner */
+			cursor: not-allowed;
+			background-color: #ddd;
+			color: #666;
+			position: relative;
+		}
 
-        footer:hover {
-            background-color: #45a049;
-        }
+		.loader {
+			border: 5px solid #f3f3f3;
+			/* Light grey */
+			border-top: 5px solid #3498db;
+			/* Blue */
+			border-radius: 50%;
+			width: 20px;
+			height: 20px;
+			animation: spin 1s linear infinite;
+			/* Apply animation */
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 
-        #message {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
 
-        #qrcode {
-            margin-top: 20px;
-        }
+			100% {
+				transform: rotate(360deg);
+			}
+		}
 
-        #downloadBtn {
-            margin-top: 10px;
-            padding: 10px;
-            font-size: 1.2em;
-            cursor: pointer;
-            color: #fff;
-            background-color: black;
-            border: none;
-            border-radius: 50px;
-            transition: background-color 0.3s;
-        }
+		#shortenedURL {
+			display: none;
+			margin-top: 20px;
+		}
 
-        #downloadBtn:hover {
-            background-color: #45a049;
-        }
+		#shortURL {
+			color: #28a745;
+			font-weight: bold;
+			text-decoration: none;
+		}
 
-        #faq {
-            margin-top: 30px;
-            text-align: left;
-            width: 80%;
-            max-width: 800px;
-        }
+		#copyBtn,
+		#downloadBtn {
+			padding: 10px;
+			background-color: #17a2b8;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 10px;
+		}
 
-        #faq h2 {
-            color: #4CAF50;
-        }
+		#copyBtn:hover,
+		#downloadBtn:hover {
+			background-color: #138496;
+		}
 
-        #faq p {
-            margin-top: 10px;
-        }
+		#qrcode {
+			margin-top: 20px;
+		}
 
-        /* Media Query for Mobile Responsiveness */
-        @media only screen and (max-width: 1000px) {
-            input {
-                width: 100%;
-            }
-
-            p {
-                width: 100%;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+		footer {
+			text-align: center;
+			padding: 10px;
+			background-color: #343a40;
+			color: #fff;
+		}
+	</style>
 </head>
 
 <body>
+	<header>
+		<!-- <h2>Cutly.me URL Shortener</h2> -->
+	</header>
 
-    <nav>
-        <div class="right">
-            <ul>
-                <li><a href="https://vkrhub.pw">Home</a></li>
-                <li><a href="https://git.vinaykumar.tech">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="https://vinaykumar.tech/contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    <h1 class="message">URL Shortener</h1>
-    <div>
-        <input name="text" type="url" id="linkinput" placeholder="Paste a URL to shorten">
-        <input type="submit" id="myinput" value="Shorten">
-    </div>
-    <p id="message"></p>
-    <div id="qrcode"></div>
-    <button id="downloadBtn">Download QR</button>
+	<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <div id="faq">
-        <h2>Frequently Asked Questions (FAQs)</h2>
-        <p><strong>Q: What is VKR URL Shortener?</strong></p>
-        <p>A: VKR URL Shortener is a free URL shortening service designed by Vinay Kumar. It allows you to easily shorten long URLs.</p>
+	<!-- Top Navigation Menu -->
+	<div class="topnav">
+		<a href="logo.png" class="active">Cutly.me URL Shortener</a>
+		<!-- Navigation links (hidden by default) -->
+		<div id="myLinks">
+			<a href="#news">News</a>
+			<a href="https://vinaykumar.tech/contact">Contact</a>
+			<a href="https://git.vinaykumar.tech">About</a>
+		</div>
+		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
 
-        <p><strong>Q: How does it work?</strong></p>
-        <p>A: Simply paste your long URL into the input field and click "Shorten." VKR URL Shortener will generate a short URL and a QR code for your convenience.</p>
+	<main>
+		<section class="url-shortener">
+			<div class="input-container">
+				<input type="url" id="originalURL" placeholder="Paste a URL to shorten">
+				<button id="shortenBtn" onclick="shortenURL()">Shorten</button>
+			</div>
 
-        <p><strong>Q: Can I customize the short URL?</strong></p>
-        <p>A: Currently, customization features are not available. Short URLs are automatically generated based on the provided long URL.</p>
+			<div id="shortenedURL" class="hidden">
+				<p>Your shortened URL:</p>
+				<a href="#" target="_blank" id="shortURL"></a>
+				<button id="copyBtn">Copy</button>
+			</div>
 
-        <p><strong>Q: Is VKR URL Shortener free to use?</strong></p>
-        <p>A: Yes, VKR URL Shortener is completely free to use.</p>
+			<div id="qrcode" class="hidden"></div>
 
-        <p><strong>Q: How can I contact support?</strong></p>
-        <p>A: For support or inquiries, you can visit the Contact page on Vinay Kumar's website: <a href="https://vinaykumar.tech/contact" target="_blank">Contact</a>.</p>
-    </div>
+			<button id="downloadBtn" class="hidden">Download QR</button>
+		</section>
+	</main>
 
-    <script>
-        document.getElementById("myinput").onclick = function () {
-            var link = document.getElementById("linkinput").value;
-            var data = {
-                "domain": "l.cutly.me",
-                "originalURL": link,
-                "allowDuplicates": false
-            };
+	<footer>
+		<p>&copy; 2024 Cutly.me | All rights reserved</p>
+	</footer>
 
-            fetch('https://api.short.cm/links/public', {
-                method: 'post',
-                headers: {
-                    'accept': 'application/json',
-                    'Content-Type': 'application/json',
-                    'authorization': 'pk_fGXG6DlnMimv7QzJ'
-                },
-                body: JSON.stringify(data)
-            })
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (data) {
-                    var shortURL = data.shortURL;
-                    document.getElementById("message").innerHTML = "Your short link is: " + shortURL;
+	<script>
+		/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+		function myFunction() {
+			var x = document.getElementById("myLinks");
+			if (x.style.display === "block") {
+				x.style.display = "none";
+			} else {
+				x.style.display = "block";
+			}
+		}
 
-                    // Create a copy button
-                    var copyButton = document.createElement("button");
-                    copyButton.textContent = "Copy";
-                    copyButton.onclick = function () {
-                        // Copy the short URL to the clipboard
-                        var textarea = document.createElement("textarea");
-                        textarea.value = shortURL;
-                        document.body.appendChild(textarea);
-                        textarea.select();
-                        document.execCommand('copy');
-                        document.body.removeChild(textarea);
-                        alert("Copied to clipboard: " + shortURL);
-                    };
+		function shortenURL() {
+			var shortenBtn = document.getElementById("shortenBtn");
 
-                    // Append the copy button to the message div
-                    document.getElementById("message").appendChild(copyButton);
+			// Disable the button and show loading spinner
+			shortenBtn.disabled = true;
+			shortenBtn.innerHTML = 'Shorten<span class="loader"></span>';
 
-                    // Create a QR code for the short URL
-                    var qrcode = new QRCode(document.getElementById("qrcode"), {
-                        text: shortURL,
-                        width: 128,
-                        height: 128
-                    });
-                });
+			var originalURL = document.getElementById("originalURL").value;
+			var data = {
+				"domain": "l.cutly.me",
+				"originalURL": originalURL,
+				"allowDuplicates": false
+			};
 
-            document.getElementById("linkinput").value = '';
-        }
+			fetch('https://api.short.cm/links/public', {
+				method: 'post',
+				headers: {
+					'accept': 'application/json',
+					'Content-Type': 'application/json',
+					'authorization': 'pk_fGXG6DlnMimv7QzJ'
+				},
+				body: JSON.stringify(data)
+			})
+				.then(function (response) {
+					return response.json();
+				})
+				.then(function (data) {
+					var shortURL = data.shortURL;
+					document.getElementById("shortURL").textContent = shortURL;
+					document.getElementById("shortenedURL").style.display = "block";
+					generateQRCode(shortURL);
+				})
+				.finally(function () {
+					// Enable the button and remove loading spinner
+					shortenBtn.disabled = false;
+					shortenBtn.innerHTML = 'Shorten';
+				});
+		}
 
-        // Download QR Code
-        document.getElementById('downloadBtn').addEventListener('click', function () {
-            var canvas = document.querySelector('#qrcode canvas');
-            var downloadBtn = document.getElementById('downloadBtn');
-            var image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
-            var link = document.createElement('a');
-            link.download = 'QRCode.png';
-            link.href = image;
-            link.click();
-        });
-    </script>
-    <!-- Include this script for QR code generation -->
-    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+		document.getElementById("copyBtn").addEventListener("click", function () {
+			var shortURL = document.getElementById("shortURL").textContent;
 
-    <footer>
-        &copy; 2024 Vinay Kumar | All rights reserved
-    </footer>
+			// Copy the short URL to the clipboard
+			var textarea = document.createElement("textarea");
+			textarea.value = shortURL;
+			document.body.appendChild(textarea);
+			textarea.select();
+			document.execCommand('copy');
+			document.body.removeChild(textarea);
+			alert("Copied to clipboard: " + shortURL);
+		});
+
+		document.getElementById("downloadBtn").addEventListener("click", function () {
+			var canvas = document.querySelector('#qrcode canvas');
+			var downloadBtn = document.getElementById('downloadBtn');
+			var image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+			var link = document.createElement('a');
+			link.download = 'QRCode.png';
+			link.href = image;
+			link.click();
+		});
+
+		function generateQRCode(url) {
+			var qrcode = new QRCode(document.getElementById("qrcode"), {
+				text: url,
+				width: 256,
+				height: 256,
+				correctLevel: QRCode.CorrectLevel.H
+			});
+
+			// Add cutly.me logo to the QR code
+			var logo = new Image();
+			logo.src = 'logo.png';
+			logo.width = 50;
+			logo.height = 50;
+			logo.style.position = 'absolute';
+			logo.style.left = '50%';
+			logo.style.top = '60%';
+			logo.style.transform = 'translate(-50%, -0.00001%)';
+
+			document.getElementById("qrcode").appendChild(logo);
+			document.getElementById("qrcode").classList.remove("hidden");
+			document.getElementById("downloadBtn").classList.remove("hidden");
+		}
+	</script>
+	<!-- Include this script for QR code generation -->
+	<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 </body>
 
 </html>
