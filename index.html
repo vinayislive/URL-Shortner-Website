@@ -217,14 +217,15 @@
 
 		footer {
 			text-align: center;
+			margin: 0px;
 			padding: 10px;
-			background-color:  wheat;
-			color: black;
+			background-color:  rgb(16, 0, 43);
+			color: #fff;
 			width:100%;
 		}
 
 		.footer {
-            background-color: wheat;
+            background-color: rgb(16, 0, 43);;
         }
 
         .footer {
@@ -247,17 +248,23 @@
         footer .footer-second a:hover {
             color: red;
             font-size: 1.1rem;
+		}
+
+			footer .footer-second1 a {
+            text-decoration:none;
+            color: white;
         }
 
-        .footer>div {
-            width: 223px;
+        footer .footer-second1 a:hover {
+            color: red;
+            font-size: 1.1rem;
         }
-
-        footer .footer-rights {
-            text-align: center;
-            color: gray;
-            padding: 12px 0;
-        }
+		@media screen and (max-width: 1000px){
+			.footer-second1 a{
+				display: none;
+			}
+		}
+    
 
 	</style>
 </head>
@@ -313,7 +320,7 @@
 				<div class="footer-first">
 					CUTLY.ME
 				</div>
-				<div class="footer-second">
+				<div class="footer-second1">
 					<ul>
 						<li><a href="https://cutly.me">Home</a></li>
 						<li><a href="https://git.vinaykumar.tech">About</a></li>
