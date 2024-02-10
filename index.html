@@ -2,490 +2,431 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Cutly.me - Your URL Shortener for Quick and Easy Links.URL shortener, link shortener, short links. Shorten and share your links with Cutly.me  Cuttly.me is a platform for creating and managing short links with your own custom domain, extensive link analytics, link in bio microsites, and QR codes. Whether you are a blogger.">
-	<meta name="keywords" content="cutly.me, URL shortener, link shortener, short links">
-	<meta name="author" content="Vinay Kumar">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Cutly.me - Your URL Shortener for Quick and Easy Links.URL shortener, link shortener, short links. Shorten and share your links with Cutly.me  Cuttly.me is a platform for creating and managing short links with your own custom domain, extensive link analytics, link in bio microsites, and QR codes. Whether you are a blogger.">
+    <meta name="keywords" content="cutly.me, URL shortener, link shortener, short links">
+    <meta name="author" content="Vinay Kumar">
 
-	<!-- Open Graph metadata for social sharing -->
-	<meta property="og:title" content="Cutly.me - URL Shortener">
-	<meta property="og:description" content="Shorten and share your links with Cutly.me">
-	<meta property="og:image" content="https://cutly.me/logo.png">
-	<meta property="og:url" content="https://cutly.me">
+    <!-- Open Graph metadata for social sharing -->
+    <meta property="og:title" content="Cutly.me - URL Shortener">
+    <meta property="og:description" content="Shorten and share your links with Cutly.me">
+    <meta property="og:image" content="https://cutly.me/logo.png">
+    <meta property="og:url" content="https://cutly.me">
 
-	<!-- Twitter Card metadata for social sharing -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Cutly.me - URL Shortener">
-	<meta name="twitter:description" content="Shorten and share your links with Cutly.me">
-	<meta name="twitter:image" content="https://cutly.me/logo.png">
-
-	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="https://cutly.me/logo.png">
-	<title>Cutly.me - URL Shortener</title>
-
-	<style>
-		body {
-			font-family: 'Arial', sans-serif;
-			margin: 0;
-			padding: 0;
-			background-color: wheat;
-		}
-
-		/* Style the navigation menu */
-		.topnav {
-			overflow: hidden;
-			background-color: #333;
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			/* Make the menu full width */
-			z-index: 1;
-		}
-
-		/* Hide the links inside the navigation menu (except for logo/home) */
-		.topnav #myLinks {
-			display: none;
-		}
-
-		/* Style navigation menu links */
-		.topnav a {
-			color: white;
-			padding: 14px 16px;
-			text-decoration: none;
-			font-size: 17px;
-			display: block;
-		}
-
-		/* Style the hamburger menu */
-		.topnav a.icon {
-			background: black;
-			display: block;
-			position: absolute;
-			right: 0;
-			top: 0;
-		}
-
-		/* Add a grey background color on mouse-over */
-		.topnav a:hover {
-			background-color: #ddd;
-			color: black;
-		}
-
-		/* Style the active link (or home/logo) */
-		.active {
-			background-color:  rgb(16, 0, 43);
-			color: white;
-		}
-
-		body {
-			font-family: 'Arial', sans-serif;
-			margin: 0;
-			padding: 0;
-			background-image: url('bg.png');
-			/* Replace with your background image URL */
-			background-size:cover;
-			background-position: center;
-			animation: fadeIn 1s ease-in-out;
-		}
-
-		@keyframes fadeIn {
-			from {
-				opacity: 0;
-			}
-
-			to {
-				opacity: 1;
-			}
-		}
+    <!-- Twitter Card metadata for social sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cutly.me - URL Shortener">
+    <meta name="twitter:description" content="Shorten and share your links with Cutly.me">
+    <meta name="twitter:image" content="https://cutly.me/logo.png">
 
 
-		header {
-			background-color: #343a40;
-			color: #fff;
-			padding: 20px;
-			text-align: center;
-		}
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cutly.me/logo.png">
 
-		main {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 80vh;
-			margin-top: 80px;
-			/* Adjust margin-top to make space for the fixed menu */
-		}
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Cutly.me - URL Shortener</title>
+    <style>
+        /* Light theme styles */
+        :root {
+            --background-color: wheat;
+            --navbar-bg-color: #343a40;
+            --text-color: #fff;
+        }
 
-		.url-shortener {
-			background-color: whitesmoke;
-			border-radius: 10px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-			padding: 20px;
-			text-align: center;
-			/* width: 100vw; */
-		}
+        /* Dark theme styles */
+        .dark-theme {
+            --background-color: #212529;
+            --navbar-bg-color: #212529;
+            --text-color: #fff;
+        }
 
-		.input-container {
-			margin-bottom: 20px;
-		}
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            transition: background-color 0.5s ease-in-out;
+        }
 
-		input {
-			width: 60%;
-			padding: 10px;
-			border: 1px solid #ced4da;
-			border-radius: 5px;
-		}
+        header {
+            background-color: var(--navbar-bg-color);
+            color: var(--text-color);
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+        }
 
-		button {
-			padding: 10px;
-			background-color: #007bff;
-			color: #fff;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-		}
+        /* .navbar-toggler-icon {
+    
+        } */
 
-		button:hover {
-			background-color: #0056b3;
-		}
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+            transform: rotate(90deg);
+        }
 
-		button:disabled {
-			/* Style for disabled state, e.g., showing loading spinner */
-			cursor: not-allowed;
-			background-color: #ddd;
-			color: #666;
-			position: relative;
-		}
+        .navbar-toggler[aria-expanded="false"] .navbar-toggler-icon:before {
+            transform: rotate(0deg);
+        }
 
-		.loader {
-			border: 5px solid #f3f3f3;
-			/* Light grey */
-			border-top: 5px solid #3498db;
-			/* Blue */
-			border-radius: 50%;
-			width: 20px;
-			height: 20px;
-			animation: spin 1s linear infinite;
-			/* Apply animation */
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            margin-top: 80px;
+            /* Adjust margin-top to make space for the fixed menu */
+        }
 
-		@keyframes spin {
-			0% {
-				transform: rotate(0deg);
-			}
+        .url-shortener {
+            background-color: whitesmoke;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            /* width: 100vw; */
+        }
 
-			100% {
-				transform: rotate(360deg);
-			}
-		}
+        .input-container {
+            margin-bottom: 20px;
+        }
 
-		#shortenedURL {
-			display: none;
-			margin-top: 20px;
-		}
+        input {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
 
-		#shortURL {
-			color: #28a745;
-			font-weight: bold;
-			text-decoration: none;
-		}
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-		#copyBtn,
-		#downloadBtn {
-			padding: 10px;
-			background-color: #17a2b8;
-			color: #fff;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			margin-top: 10px;
-		}
+        button:hover {
+            background-color: #0056b3;
+        }
 
-		#copyBtn:hover,
-		#downloadBtn:hover {
-			background-color: #138496;
-		}
+        button:disabled {
+            /* Style for disabled state, e.g., showing loading spinner */
+            cursor: not-allowed;
+            background-color: #ddd;
+            color: #666;
+            position: relative;
+        }
 
-		#qrcode {
-			margin-top: 20px;
-		}
+        .loader {
+            border: 5px solid #f3f3f3;
+            /* Light grey */
+            border-top: 5px solid #3498db;
+            /* Blue */
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            /* Apply animation */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-		footer {
-			text-align: center;
-			margin: 0px;
-			padding: 10px;
-			background-color:  rgb(16, 0, 43);
-			color: #fff;
-			width:100%;
-		}
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
 
-		.footer {
-            background-color: rgb(16, 0, 43);;
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #shortenedURL {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #shortURL {
+            color: #28a745;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        #copyBtn,
+        #downloadBtn {
+            padding: 10px;
+            background-color: #17a2b8;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #copyBtn:hover,
+        #downloadBtn:hover {
+            background-color: #138496;
+        }
+
+        #qrcode {
+            margin-top: 20px;
+        }
+
+        .hidden {
+            display: none;
         }
 
         .footer {
-            display: flex;
-            padding: 23px 122px;
-            justify-content: space-evenly;
-			align-items: center;
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
         }
 
-        .footer ul {
-            list-style: none;
-
+        .footer-links {
+            list-style-type: none;
+            padding: 0;
         }
 
-        footer .footer-second a {
-            text-decoration:none;
-            color: white;
+        .footer-links li {
+            display: inline;
+            margin-right: 15px;
         }
 
-        footer .footer-second a:hover {
-            color: red;
-            font-size: 1.1rem;
-		}
-
-	footer .footer-first a{
-   text-decoration:none;
-            color: white;
-	}
-			footer .footer-second1 a {
-            text-decoration:none;
-            color: white;
+        .footer-links li a {
+            color: #fff;
+            text-decoration: none;
         }
-
-        footer .footer-second1 a:hover {
-            color: red;
-            font-size: 1.1rem;
-        }
-		@media screen and (max-width: 1000px){
-			.footer-second1 a{
-				display: none;
-			}
-			.topnav {
-			overflow: hidden;
-			background-color: #333;
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 95%;
-			/* Make the menu full width */
-			z-index: 1;
-		}
-		}
-    
-
-	</style>
-	<!-- Brevo Conversations {literal} -->
-<script>
-    (function(d, w, c) {
-        w.BrevoConversationsID = '65300de90df84f2efc0b2116';
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
-        var s = d.createElement('script');
-        s.async = true;
-        s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
-        if (d.head) d.head.appendChild(s);
-    })(document, window, 'BrevoConversations');
-</script>
-<!-- /Brevo Conversations {/literal} -->
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9342262535454395"
-     crossorigin="anonymous"></script>
-	
-	 
+    </style>
 </head>
 
 <body>
 
-	<header>
-		<!-- <h2>Cutly.me URL Shortener</h2> -->
-	</header>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
-	<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:black;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://cutly.me/logo.png" alt="" width="30" height="24"
+                    class="d-inline-block align-text-top">
+                Cutly.me
+            </a>
+        </div>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://cutly.me"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="https://cutly.me">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Features
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Link Customisation</a></li>
+                            <li><a class="dropdown-item" href="#">QR for Link</a></li>
 
-	<!-- Top Navigation Menu -->
-	<div class="topnav">
-		<a href="logo.png" class="active">Cutly.me URL Shortener</a>
-		<!-- Navigation links (hidden by default) -->
-		<div id="myLinks">
-			<a href="https://cutly.me">Home</a>
-			<a href="https://vkrhub.pw/login.php">Login</a>
-			<a href="https://vkrhub.pw/register.php">Register</a>
-			<a href="/contact.html">Contact</a>
-			<a href="https://git.vinaykumar.tech">About</a>
-		</div>
-		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-			<i class="fa fa-bars"></i>
-		</a>
-	
-	</div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://cutly.me/contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://cutly.me/privacy.html">Privacy Policy</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Socials
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="https://git.vinaykumar.tech">About</a></li>
+                            <li><a class="dropdown-item" href="https://www.instagram.com/vinay.kumar.ig/">Instagram</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://github.com/vinayislive">Github</a></li>
+                            <li><a class="dropdown-item" href="https://www.linkedin.com/in/vinaykumar8269">Linkedin</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Facebook</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Theme toggle button -->
+                        <button class="nav-link btn btn-primary" onclick="toggleTheme()">Toggle Theme</button>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="text-center">
+        <div id="loading" class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
 
 
-	<main>
-		<section class="url-shortener">
-			<div class="input-container">
-				<input type="url" id="originalURL" placeholder="Paste a URL to shorten">
-				<button id="shortenBtn" onclick="shortenURL()">Shorten</button>
-			</div>
+    <main>
+        <section class="url-shortener">
+            <div class="input-container">
+                <input type="url" id="originalURL" placeholder="Paste URL to shorten">
+                <button id="shortenBtn" onclick="shortenURL()">Shorten</button>
+            </div>
 
-			<div id="shortenedURL" class="hidden">
-				<p>Your shortened URL:</p>
-				<a href="#" target="_blank" id="shortURL"></a>
-				<button id="copyBtn">Copy</button>
-			</div>
+            <div id="shortenedURL" class="hidden">
+                <p>Your shortened URL:</p>
+                <a href="#" target="_blank" id="shortURL"></a>
+                <button id="copyBtn">Copy</button>
+            </div>
 
-			<div id="qrcode" class="hidden"></div>
+            <div id="qrcode" class="hidden"></div>
 
-			<button id="downloadBtn" class="hidden">Download QR</button>
+            <button id="downloadBtn" class="hidden">Download QR</button>
 
-		</section>
-		
-	</main>
-<footer>
-			<div class="footer">
-				<div class="footer-first">
-					<a href="https://cutly.me">CUTLY.ME</a>
-				</div>
-				<div class="footer-second1">
-					<ul>
-						<li><a href="https://cutly.me">Home</a></li>
-						<li><a href="https://git.vinaykumar.tech">About</a></li>
-						<li><a href="https://cutly.me">Services</a></li>
-						
-					</ul>
-				</div>
-				<div class="footer-second">
-					<ul>
-						<li><a href="https://www.linkedin.com/in/vinaykumar8269">Linkedin</a></li>
-						<li><a href="https://github.com/codes4vkr">Github</a></li>
-						<li><a href="mailto:contact@vinaykumar.tech">Email</a></li>
-						
-					</ul>
-				</div>
-				<div class="footer-second">
-					<ul>
-						<li><a href="https://vinaykumar.tech">Website</a></li>
-						<li><a href="https://www.instagram.com/vinay.kumar.ig/">Instagram</a></li>
-						
-						<li><a
-								href="https://f003f503.sibforms.com/serve/MUIFAGreNQzAPREB6xxscpfQrF4cckcVXhKu4vzkjylUCCV5CeZhwnq5xRGQxgnOqUHicy1tvnqogH9DG9Jc7RL4e6HX7xwiXdPdUoxc8dRk2gKkClO5w-QXz3yL4XqX48k2AcWdIpLRYXFVr16-mq0fIyNqyo7neCUKiaoGViNdmIbIrXroSBdAjW2kReR8sSCqYcn5RgXAMW3L">Newsletter</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="footer-rights">
-				<p>&copy; 2024 Cutly.me | All rights reserved</p>
-			</div>
-		</footer>
-	
+        </section>
 
-	<script>
-		/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-		function myFunction() {
-			var x = document.getElementById("myLinks");
-			if (x.style.display === "block") {
-				x.style.display = "none";
-			} else {
-				x.style.display = "block";
-			}
-		}
+    </main>
+    <footer class="footer">
+        <div class="container text-center">
+            <ul class="footer-links">
+                <li><a href="https://cutly.me">Home</a></li>
+                <li><a href="https://git.vinaykumar.tech">About Developer</a></li>
+                <li><a href="https://cutly.me/contact.html">Contact</a></li>
+            </ul>
+            <p>&copy; 2024 Cutly.me | All rights reserved</p>
+        </div>
+    </footer>
+    <script>
+        // Function to toggle between light and dark themes
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('dark-theme');
+        }
+        /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
 
-		function shortenURL() {
-			var shortenBtn = document.getElementById("shortenBtn");
+        function shortenURL() {
+            var shortenBtn = document.getElementById("shortenBtn");
 
-			// Disable the button and show loading spinner
-			shortenBtn.disabled = true;
-			shortenBtn.innerHTML = 'Shorten<span class="loader"></span>';
+            // Disable the button and show loading spinner
+            shortenBtn.disabled = true;
+            shortenBtn.innerHTML = 'Shorten<span class="loader"></span>';
 
-			var originalURL = document.getElementById("originalURL").value;
-			var data = {
-				"domain": "i.cutly.me",
-				"originalURL": originalURL,
-				"allowDuplicates": false
-			};
+            var originalURL = document.getElementById("originalURL").value;
+            var data = {
+                "domain": "i.cutly.me",
+                "originalURL": originalURL,
+                "allowDuplicates": false
+            };
 
-			fetch('https://api.short.cm/links/public', {
-				method: 'post',
-				headers: {
-					'accept': 'application/json',
-					'Content-Type': 'application/json',
-					'authorization': 'pk_VLBnYTXXQWbtCPpw'
-				},
-				body: JSON.stringify(data)
-			})
-				.then(function (response) {
-					return response.json();
-				})
-				.then(function (data) {
-					var shortURL = data.shortURL;
-					document.getElementById("shortURL").textContent = shortURL;
-					document.getElementById("shortenedURL").style.display = "block";
-					generateQRCode(shortURL);
-				})
-				.finally(function () {
-					// Enable the button and remove loading spinner
-					shortenBtn.disabled = false;
-					shortenBtn.innerHTML = 'Shorten';
-				});
-		}
+            fetch('https://api.short.cm/links/public', {
+                method: 'post',
+                headers: {
+                    'accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'authorization': 'pk_VLBnYTXXQWbtCPpw'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    var shortURL = data.shortURL;
+                    document.getElementById("shortURL").textContent = shortURL;
+                    document.getElementById("shortenedURL").style.display = "block";
+                    generateQRCode(shortURL);
+                })
+                .finally(function () {
+                    // Enable the button and remove loading spinner
+                    shortenBtn.disabled = false;
+                    shortenBtn.innerHTML = 'Shorten';
+                });
+        }
 
-		document.getElementById("copyBtn").addEventListener("click", function () {
-			var shortURL = document.getElementById("shortURL").textContent;
+        document.getElementById("copyBtn").addEventListener("click", function () {
+            var shortURL = document.getElementById("shortURL").textContent;
 
-			// Copy the short URL to the clipboard
-			var textarea = document.createElement("textarea");
-			textarea.value = shortURL;
-			document.body.appendChild(textarea);
-			textarea.select();
-			document.execCommand('copy');
-			document.body.removeChild(textarea);
-			alert("Copied to clipboard: " + shortURL);
-		});
+            // Copy the short URL to the clipboard
+            var textarea = document.createElement("textarea");
+            textarea.value = shortURL;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert("Copied to clipboard: " + shortURL);
+        });
 
-		document.getElementById("downloadBtn").addEventListener("click", function () {
-			var canvas = document.querySelector('#qrcode canvas');
-			var downloadBtn = document.getElementById('downloadBtn');
-			var image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
-			var link = document.createElement('a');
-			link.download = 'QRCode.png';
-			link.href = image;
-			link.click();
-		});
+        document.getElementById("downloadBtn").addEventListener("click", function () {
+            var canvas = document.querySelector('#qrcode canvas');
+            var downloadBtn = document.getElementById('downloadBtn');
+            var image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+            var link = document.createElement('a');
+            link.download = 'QRCode.png';
+            link.href = image;
+            link.click();
+        });
 
-		function generateQRCode(url) {
-			var qrcode = new QRCode(document.getElementById("qrcode"), {
-				text: url,
-				width: 256,
-				height: 256,
-				correctLevel: QRCode.CorrectLevel.H
-			});
+        function generateQRCode(url) {
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: url,
+                width: 256,
+                height: 256,
+                correctLevel: QRCode.CorrectLevel.H
+            });
 
-			// Add cutly.me logo to the QR code
-			var logo = new Image();
-			logo.src = 'logo.png';
-			logo.width = 50;
-			logo.height = 50;
-			logo.style.position = 'absolute';
-			logo.style.left = '50%';
-			logo.style.top = '60%';
-			logo.style.transform = 'translate(-50%, -0.00001%)';
+            // Add cutly.me logo to the QR code
+            var logo = new Image();
+            logo.src = 'logo.png';
+            logo.width = 50;
+            logo.height = 50;
+            logo.style.position = 'absolute';
+            logo.style.left = '50%';
+            logo.style.top = '60%';
+            logo.style.transform = 'translate(-50%, -0.00001%)';
 
-			document.getElementById("qrcode").appendChild(logo);
-			document.getElementById("qrcode").classList.remove("hidden");
-			document.getElementById("downloadBtn").classList.remove("hidden");
-		}
-	</script>
-	<!-- Include this script for QR code generation -->
-	<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-	
+            document.getElementById("qrcode").appendChild(logo);
+            document.getElementById("qrcode").classList.remove("hidden");
+            document.getElementById("downloadBtn").classList.remove("hidden");
+        }
+    </script>
+    <!-- Include this script for QR code generation -->
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script>
+
+        setTimeout(function () {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }, 1000);
+    </script>
 </body>
 
 </html>
