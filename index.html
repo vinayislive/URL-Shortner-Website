@@ -374,12 +374,14 @@
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
- <div class="alert alert-success" role="alert">
+  <div class="alert alert-success" role="alert">
+
         <h4 class="alert-heading">Free Url Shortner!</h4>
-        <p>The complete URL Shortener platform, Link Management, Link Analytics, Deep links, QR Codes
+        <!-- <p>The complete URL Shortener platform, Link Management, Link Analytics, Deep links, QR Codes
             Generator, and Link
             in Bio.
-            Shorten, brand, manage, track, and share your links effortlessly.</p>
+            Shorten, brand, manage, track, and share your links effortlessly.</p> -->
+        <span id="element"></span>
     </div>
  <div>
      <div class="wave"></div>
@@ -531,6 +533,13 @@
             document.getElementById('loading').style.display = 'none';
             document.getElementById('content').style.display = 'block';
         }, 1000);
+    </script>
+     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['The complete URL Shortener platform, Link Management, Link Analytics, Deep links, QR Code Generator, and Link in Bio.Shorten, brand, manage, track, and share your links effortlessly.'],
+            typeSpeed: 50,
+        });
     </script>
 </body>
 
