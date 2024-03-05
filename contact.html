@@ -30,6 +30,395 @@
 
     <title>Contact - Tinyurls.tech</title>
     <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .min-h-screen {
+            min-height: 100vh;
+        }
+
+        .bg-gray-100 {
+            background-color: black;
+        }
+
+        .dark:bg-gray-900 {
+            background-color: #111827;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .my-10 {
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .bg-white {
+            background-color: black;
+        }
+
+        .p-5 {
+            padding: 1.25rem;
+        }
+
+        .rounded-md {
+            border-radius: 0.375rem;
+        }
+
+        .shadow-sm {
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .my-3 {
+            margin-top: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+        }
+
+        .font-semibold {
+            font-weight: 600;
+        }
+
+        .text-gray-600 {
+            color: #4b5563;
+        }
+
+        .dark:text-gray-200 {
+            color: #f3f4f6;
+        }
+
+        .text-gray-400 {
+            color: #cbd5e0;
+        }
+
+        .dark:text-gray-400 {
+            color: #9ca3af;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .placeholder-gray-300::placeholder {
+            color: #d1d5db;
+        }
+
+        .border {
+            border-width: 1px;
+        }
+
+        .border-gray-400 {
+            border-color: #e5e7eb;
+        }
+
+        .rounded-md {
+            border-radius: 0.375rem;
+        }
+
+        .focus\:outline-none:focus {
+            outline: 0;
+        }
+
+        .focus\:ring {
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+        }
+
+        .focus\:ring-indigo-100:focus {
+            box-shadow: 0 0 0 3px rgba(191, 219, 254, 0.5);
+        }
+
+        .focus\:ring-indigo-500:focus {
+            box-shadow: 0 0 0 3px rgba(31, 41, 55, 0.5);
+        }
+
+        .focus\:border-indigo-500:focus {
+            border-color: #3b82f6;
+        }
+
+        .dark\:bg-gray-700 {
+            background-color: #4a5568;
+        }
+
+        .dark\:text-white {
+            color: #ffffff;
+        }
+
+        .dark\:placeholder-gray-500::placeholder {
+            color: #6b7280;
+        }
+
+        .dark\:border-gray-600 {
+            border-color: #718096;
+        }
+
+        .dark\:focus\:ring-gray-900:focus {
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5);
+        }
+
+        .dark\:focus\:ring-gray-500:focus {
+            box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.5);
+        }
+
+        .dark\:focus\:border-gray-500:focus {
+            border-color: #a0aec0;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .px-3 {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .border-gray-400 {
+            border-color: #d1d5db;
+        }
+
+        .border {
+            border-width: 1px;
+        }
+
+        .border-transparent {
+            border-color: transparent;
+        }
+
+        .focus\:ring {
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+        }
+
+        .focus\:ring-indigo-100:focus {
+            box-shadow: 0 0 0 3px rgba(191, 219, 254, 0.5);
+        }
+
+        .focus\:ring-indigo-500:focus {
+            box-shadow: 0 0 0 3px rgba(31, 41, 55, 0.5);
+        }
+
+        .focus\:border-indigo-500:focus {
+            border-color: #3b82f6;
+        }
+
+        .dark\:bg-gray-700 {
+            background-color: #4a5568;
+        }
+
+        .dark\:text-white {
+            color: #ffffff;
+        }
+
+        .dark\:placeholder-gray-500::placeholder {
+            color: #6b7280;
+        }
+
+        .dark\:border-gray-600 {
+            border-color: #718096;
+        }
+
+        .dark\:focus\:ring-gray-900:focus {
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5);
+        }
+
+        .dark\:focus\:ring-gray-500:focus {
+            box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.5);
+        }
+
+        .dark\:focus\:border-gray-500:focus {
+            border-color: #a0aec0;
+        }
+
+        .text-base {
+            font-size: 1.125rem;
+        }
+
+        .text-gray-400 {
+            color: #cbd5e0;
+        }
+
+        .dark\:text-gray-400 {
+            color: #9ca3af;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .bg-indigo-700 {
+            background-color: #4f46e5;
+        }
+
+        .rounded-md {
+            border-radius: 0.375rem;
+        }
+
+        .focus\:bg-indigo-600:focus {
+            background-color: #4338ca;
+        }
+
+        .focus\:outline-none:focus {
+            outline: 0;
+        }
+
+        .text-white {
+            color: #ffffff;
+        }
+
+        .focus\:ring {
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+        }
+
+        .focus\:ring-indigo-100:focus {
+            box-shadow: 0 0 0 3px rgba(191, 219, 254, 0.5);
+        }
+
+        .focus\:ring-indigo-500:focus {
+            box-shadow: 0 0 0 3px rgba(31, 41, 55, 0.5);
+        }
+
+        .focus\:border-indigo-500:focus {
+            border-color: #3b82f6;
+        }
+
+        .dark\:bg-gray-700 {
+            background-color: #4a5568;
+        }
+
+        .dark\:text-white {
+            color: #ffffff;
+        }
+
+        .dark\:placeholder-gray-500::placeholder {
+            color: #6b7280;
+        }
+
+        .dark\:border-gray-600 {
+            border-color: #718096;
+        }
+
+        .dark\:focus\:ring-gray-900:focus {
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5);
+        }
+
+        .dark\:focus\:ring-gray-500:focus {
+            box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.5);
+        }
+
+        .dark\:focus\:border-gray-500:focus {
+            border-color: #a0aec0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style-type: none;
+            margin: 0 23px;
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: red;
+            font-size: 1.1rem;
+        }
+
+        .left {
+            font-size: 1.8rem;
+        }
+
+        .left a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .left a:hover {
+            color: red;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+    
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -344,103 +733,64 @@
 
 
     <main>
-        
-    <iframe
-      id="JotFormIFrame-240445595845466"
-      title="Contact Form"
-      onload="window.parent.scrollTo(0,0)"
-      allowtransparency="true"
-      allowfullscreen="true"
-      allow="geolocation; microphone; camera"
-      src="https://form.jotform.com/240445595845466"
-      frameborder="0"
-      style="min-width:100%;max-width:100%;height:539px;border:none;"
-      scrolling="no"
-    >
-    </iframe>
-    <script type="text/javascript">
-    var ifr = document.getElementById("JotFormIFrame-240445595845466");
-    if (ifr) {
-      var src = ifr.src;
-      var iframeParams = [];
-      if (window.location.href && window.location.href.indexOf("?") > -1) {
-        iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
-      }
-      if (src && src.indexOf("?") > -1) {
-        iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
-        src = src.substr(0, src.indexOf("?"))
-      }
-      iframeParams.push("isIframeEmbed=1");
-      ifr.src = src + "?" + iframeParams.join('&');
-    }
-    window.handleIFrameMessage = function(e) {
-      if (typeof e.data === 'object') { return; }
-      var args = e.data.split(":");
-      if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
-      if (!iframe) { return; }
-      switch (args[0]) {
-        case "scrollIntoView":
-          iframe.scrollIntoView();
-          break;
-        case "setHeight":
-          iframe.style.height = args[1] + "px";
-          if (!isNaN(args[1]) && parseInt(iframe.style.minHeight) > parseInt(args[1])) {
-            iframe.style.minHeight = args[1] + "px";
-          }
-          break;
-        case "collapseErrorPage":
-          if (iframe.clientHeight > window.innerHeight) {
-            iframe.style.height = window.innerHeight + "px";
-          }
-          break;
-        case "reloadPage":
-          window.location.reload();
-          break;
-        case "loadScript":
-          if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; }
-          var src = args[1];
-          if (args.length > 3) {
-              src = args[1] + ':' + args[2];
-          }
-          var script = document.createElement('script');
-          script.src = src;
-          script.type = 'text/javascript';
-          document.body.appendChild(script);
-          break;
-        case "exitFullscreen":
-          if      (window.document.exitFullscreen)        window.document.exitFullscreen();
-          else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
-          else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
-          else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
-          else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
-          break;
-      }
-      var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
-      if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
-        var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
-        iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
-      }
-    };
-    window.isPermitted = function(originUrl, whitelisted_domains) {
-      var url = document.createElement('a');
-      url.href = originUrl;
-      var hostname = url.hostname;
-      var result = false;
-      if( typeof hostname !== 'undefined' ) {
-        whitelisted_domains.forEach(function(element) {
-            if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) ||  hostname === element ) {
-                result = true;
-            }
-        });
-        return result;
-      }
-    };
-    if (window.addEventListener) {
-      window.addEventListener("message", handleIFrameMessage, false);
-    } else if (window.attachEvent) {
-      window.attachEvent("onmessage", handleIFrameMessage);
-    }
-    </script>
+          <div class="flex items-center min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto">
+            <div class="max-w-md mx-auto my-10 bg-white p-5 rounded-md shadow-sm">
+                <div class="text-center">
+                    <h1 style="color: whitesmoke;" class="my-3 text-3xl font-semibold text-black dark:text-gray-200">
+                        Contact Us
+                    </h1>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Fill up the form below to send us a message.
+                    </p>
+                </div>
+                <div class="m-7">
+                    <form action="https://formspree.io/f/xgegzevz" method="POST" id="form">
+                        <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+                        <input type="hidden" name="redirect" value="https://vkonline.live" />
+                        <input type="checkbox" name="botcheck" id="" style="display: none;" />
+                        <div class="mb-6">
+                            <label for="name"
+                                class="block mb-2 font-medium text-sm text-gray-600 dark:text-gray-400">Full
+                                Name</label>
+                            <input type="text" name="name" id="name" placeholder="John Doe" required
+                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-400 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-500 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                        </div>
+                        <div class="mb-6">
+                            <label for="email"
+                                class="block mb-2 font-medium text-sm text-gray-600 dark:text-gray-400">Email
+                                Address</label>
+                            <input type="email" name="email" id="email" placeholder="you@company.com" required
+                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-400 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-500 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="text-sm mb-2 font-medium text-gray-600 dark:text-gray-400">Phone
+                                Number</label>
+                            <input type="text" name="phone" id="phone" placeholder="+1 (555) 1234-567" required
+                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-400 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-500 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                        </div>
+                        <div class="mb-6">
+                            <label for="message"
+                                class="block mb-2 font-medium text-sm text-gray-600 dark:text-gray-400">Your
+                                Message</label>
+
+                            <textarea rows="5" name="message" id="message" placeholder="Your Message"
+                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-400 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-500 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                                required></textarea>
+                        </div>
+                        <div class="mb-6">
+                            <button type="submit" style="height: 5vh; width: 19vw;"
+                                class="w-full px-3 py-4 text-white bg-indigo-700 rounded-md focus:bg-indigo-600 focus:outline-none">
+                                Send Message
+                            </button>
+                        </div>
+                        <p class="text-base text-center text-gray-400" id="result"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
         <title>tinyurls.tech Contact Page</title>
     </main>
     <footer class="footer">
