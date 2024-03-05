@@ -544,6 +544,13 @@
             strings: ['Write us at "hi@tinyurls.tech"'],
             typeSpeed: 50,
         });
+        document.addEventListener('contextmenu', event => {
+    event.preventDefault();
+});
+
+document.querySelectorAll('.disabled').forEach(element => {
+    element.style.pointerEvents = 'none';
+});
     </script>
 </body>
 
