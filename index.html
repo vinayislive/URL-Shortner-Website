@@ -208,37 +208,25 @@
             color: #fff;
             text-decoration: none;
         }
-        html, body { 
-  height: 100%; 
-  margin: 0; 
-  overflow: hidden;
-}
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000; 
-}
-
 
         body {
     margin: auto;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     overflow: auto;
-/*     background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
-    animation: gradient 15s ease infinite; */
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    animation: gradient 15s ease infinite; 
     background-size: 400% 400%;
     background-attachment: fixed;
 }
 
-/* @keyframes gradient {
+ @keyframes gradient {
     0% {
         background-position: 0% 0%;
     }
     50% {
         background-position: 100% 100%;
-    } */
-/*     100% {
+    } 
+    100% {
         background-position: 0% 0%;
     }
 }
@@ -254,8 +242,8 @@ body {
     opacity: 0.8;
     bottom: 0;
     left: 0;
-    z-index: -1; */
-/* }
+    z-index: -1; 
+ }
 
 .wave:nth-of-type(2) {
     bottom: -1.25em;
@@ -267,9 +255,9 @@ body {
     bottom: -2.5em;
     animation: wave 20s -1s reverse infinite;
     opacity: 0.9;
-} */
+} 
 
-/* @keyframes wave {
+ @keyframes wave {
     2% {
         transform: translateX(1);
     }
@@ -288,51 +276,9 @@ body {
 
     100% {
         transform: translateX(1);
-    } */
-}
+    } 
+} 
     </style>
-    <css-doodle>
-  <style>
-    @grid: 50x1 / 50vmin;
-    :container {
-      perspective: 23vmin;
-    }
-    background: @m(
-      @r(200, 240), 
-      radial-gradient(
-        @p(#00b8a9, #f8f3d4, #f6416c, #ffde7d) 15%,
-        transparent 50%
-      ) @r(100%) @r(100%) / @r(1%, 3%) @lr no-repeat
-    );
-
-    @size: 80%;
-    @place-cell: center;
-
-    border-radius: 50%;
-    transform-style: preserve-3d;
-    animation: scale-up 20s linear infinite;
-    animation-delay: calc(@i * -.4s);
-
-    @keyframes scale-up {
-      0% {
-        opacity: 0;
-        transform: translate3d(0, 0, 0) rotate(0);
-      }
-      10% { 
-        opacity: 1; 
-      }
-      95% {
-        transform:
-          translate3d(0, 0, @r(50vmin, 55vmin))
-          rotate(@r(-360deg, 360deg));
-      }
-      100% {
-        opacity: 0;
-        transform: translate3d(0, 0, 1vmin);
-      }
-    }
-  </style>
-</css-doodle>
     <!-- Brevo Conversations {literal} -->
 <script>
     (function(d, w, c) {
