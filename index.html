@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="tinyurls.tech - Your URL Shortener for Quick and Easy Links.Shorten and share your links with Cutly.me  Cuttly.me is a platform for creating and managing short links.">
-    <meta name="keywords" content=" tinyurls.tech,tinyurl,bitly.com,free url shortner,free link shortner,cutly.me, URL shortener, link shortener, short links">
+    <meta name="keywords"
+        content=" link shortner, tinyurls.tech,tinyurl,bitly.com,free url shortner,free link shortner,cutly.me, URL shortener, link shortener, short links">
     <meta name="author" content="Vinay Kumar">
 
     <!-- Open Graph metadata for social sharing -->
@@ -31,9 +32,12 @@
     <title>Tinyurls.tech - URL Shortener</title>
     <style>
         body {
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
-}
+            overflow-y: hidden;
+            /* Hide vertical scrollbar */
+            overflow-x: hidden;
+            /* Hide horizontal scrollbar */
+        }
+
         /* Light theme styles */
         :root {
             --background-color: wheat;
@@ -49,7 +53,7 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
             background-color: var(--background-color);
@@ -64,9 +68,7 @@
             transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
         }
 
-        /* .navbar-toggler-icon {
-    
-        } */
+
 
         .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
             transform: rotate(90deg);
@@ -82,20 +84,24 @@
             align-items: center;
             height: 80vh;
             margin-top: 10px;
-            /* Adjust margin-top to make space for the fixed menu */
+
         }
 
-         .url-shortener {
+        .url-shortener {
             background-color: cornsilk;
             border-radius: 50px;
-            box-shadow: 10px 20px 0px rgba(0, 0, 0.1, 0.1);
+            box-shadow: 20px 30px 10px rgba(150, 15, 15, 0.1);
             padding: 50px;
             text-align: center;
-            /* width: 100vw; */
+
         }
 
         .input-container {
             margin-bottom: 20px;
+        }
+
+        .input-container:hover {
+            filter: drop-shadow(0 0 20px rgb(0, 255, 204));
         }
 
         input {
@@ -105,7 +111,7 @@
             border-radius: 5px;
         }
 
-         button {
+        button {
             padding: 10px;
             background-color: rgb(3, 127, 127);
             color: #fff;
@@ -116,10 +122,10 @@
 
         button:hover {
             background-color: black;
+            filter: drop-shadow(0 0 20px rgb(0, 49, 224));
         }
 
         button:disabled {
-            /* Style for disabled state, e.g., showing loading spinner */
             cursor: not-allowed;
             background-color: #ddd;
             color: #666;
@@ -128,14 +134,14 @@
 
         .loader {
             border: 5px solid #f3f3f3;
-            /* Light grey */
+
             border-top: 5px solid #3498db;
-            /* Blue */
+
             border-radius: 50%;
             width: 20px;
             height: 20px;
             animation: spin 1s linear infinite;
-            /* Apply animation */
+
             position: absolute;
             top: 50%;
             left: 50%;
@@ -158,7 +164,7 @@
         }
 
         #shortURL {
-            color: #28a745;
+            color: #27783a;
             font-weight: bold;
             text-decoration: none;
         }
@@ -188,10 +194,11 @@
         }
 
         .footer {
-            background-color: #000;
-            color: #fff;
-          
-            padding: 20px  0;
+            background-color: #000000a9;
+            color: #ffffffb8;
+            border: 2px solid #000000a9;
+            margin: 0px;
+            padding: 25px;
         }
 
         .footer-links {
@@ -210,116 +217,118 @@
         }
 
         body {
-    margin: auto;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    overflow: auto;
-    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
-    animation: gradient 15s ease infinite; 
-    background-size: 400% 400%;
-    background-attachment: fixed;
-}
+            margin: auto;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow: auto;
+            background: linear-gradient(360deg, rgb(84, 188, 117) 12%, rgb(19, 37, 118) 45%, rgb(0, 0, 0) 98%, rgb(227, 81, 81) 98%);
+            animation: gradient 15s ease infinite;
+            background-size: 400% 400%;
+            background-attachment: scroll;
+        }
 
- @keyframes gradient {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    } 
-    100% {
-        background-position: 0% 0%;
-    }
-}
+        @keyframes gradient {
+            0% {
+                background-position: 0% 0%;
+            }
 
-.wave {
-    background: rgb(255 255 255 / 25%);
-    border-radius: 1000% 1000% 0 0;
-    position: fixed;
-    width: 200%;
-    height: 12em;
-    animation: wave 10s -3s linear infinite;
-    transform: translate3d(0, 0, 0);
-    opacity: 0.8;
-    bottom: 0;
-    left: 0;
-    z-index: -1; 
- }
+            50% {
+                background-position: 100% 100%;
+            }
 
-.wave:nth-of-type(2) {
-    bottom: -1.25em;
-    animation: wave 18s linear reverse infinite;
-    opacity: 0.8;
-}
+            100% {
+                background-position: 0% 0%;
+            }
+        }
 
-.wave:nth-of-type(3) {
-    bottom: -2.5em;
-    animation: wave 20s -1s reverse infinite;
-    opacity: 0.9;
-} 
+        .wave {
+            background: rgb(255 255 255 / 25%);
+            border-radius: 1000% 1000% 0 0;
+            position: fixed;
+            width: 200%;
+            height: 12em;
+            animation: wave 10s -3s linear infinite;
+            transform: translate3d(0, 0, 0);
+            opacity: 0.8;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
 
- @keyframes wave {
-    2% {
-        transform: translateX(1);
-    }
+        .wave:nth-of-type(2) {
+            bottom: -1.25em;
+            animation: wave 18s linear reverse infinite;
+            opacity: 0.8;
+        }
 
-    25% {
-        transform: translateX(-25%);
-    }
+        .wave:nth-of-type(3) {
+            bottom: -2.5em;
+            animation: wave 20s -1s reverse infinite;
+            opacity: 0.9;
+        }
 
-    50% {
-        transform: translateX(-50%);
-    }
+        @keyframes wave {
+            2% {
+                transform: translateX(1);
+            }
 
-    75% {
-        transform: translateX(-25%);
-    }
+            25% {
+                transform: translateX(-25%);
+            }
 
-    100% {
-        transform: translateX(1);
-    } 
-} 
+            50% {
+                transform: translateX(-50%);
+            }
+
+            75% {
+                transform: translateX(-25%);
+            }
+
+            100% {
+                transform: translateX(1);
+            }
+        }
     </style>
     <!-- Brevo Conversations {literal} -->
-<script>
-    (function(d, w, c) {
-        w.BrevoConversationsID = '65300de90df84f2efc0b2116';
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
-        var s = d.createElement('script');
-        s.async = true;
-        s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
-        if (d.head) d.head.appendChild(s);
-    })(document, window, 'BrevoConversations');
-</script>
-<!-- /Brevo Conversations {/literal} -->
+    <script>
+        (function (d, w, c) {
+            w.BrevoConversationsID = '65300de90df84f2efc0b2116';
+            w[c] = w[c] || function () {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            var s = d.createElement('script');
+            s.async = true;
+            s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
+            if (d.head) d.head.appendChild(s);
+        })(document, window, 'BrevoConversations');
+    </script>
+    <!-- /Brevo Conversations {/literal} -->
     <script type="text/javascript">
-    (function() {
-        window.sib = {
-            equeue: [],
-            client_key: "9hf1xapjdo3u6qkketruyos8"
-        };
-        /* OPTIONAL: email for identify request*/
-        // window.sib.email_id = 'example@domain.com';
-        window.sendinblue = {};
-        for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) {
-        (function(k) {
-            window.sendinblue[k] = function() {
-                var arg = Array.prototype.slice.call(arguments);
-                (window.sib[k] || function() {
-                        var t = {};
-                        t[k] = arg;
-                        window.sib.equeue.push(t);
-                    })(arg[0], arg[1], arg[2]);
-                };
-            })(j[i]);
-        }
-        var n = document.createElement("script"),
-            i = document.getElementsByTagName("script")[0];
+        (function () {
+            window.sib = {
+                equeue: [],
+                client_key: "9hf1xapjdo3u6qkketruyos8"
+            };
+            /* OPTIONAL: email for identify request*/
+            // window.sib.email_id = 'example@domain.com';
+            window.sendinblue = {};
+            for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) {
+                (function (k) {
+                    window.sendinblue[k] = function () {
+                        var arg = Array.prototype.slice.call(arguments);
+                        (window.sib[k] || function () {
+                            var t = {};
+                            t[k] = arg;
+                            window.sib.equeue.push(t);
+                        })(arg[0], arg[1], arg[2]);
+                    };
+                })(j[i]);
+            }
+            var n = document.createElement("script"),
+                i = document.getElementsByTagName("script")[0];
             n.type = "text/javascript", n.id = "sendinblue-js",
-            n.async = !0, n.src = "https://sibautomation.com/sa.js?key="+ window.sib.client_key,
-            i.parentNode.insertBefore(n, i), window.sendinblue.page();
-    })();
+                n.async = !0, n.src = "https://sibautomation.com/sa.js?key=" + window.sib.client_key,
+                i.parentNode.insertBefore(n, i), window.sendinblue.page();
+        })();
     </script>
 </head>
 
@@ -332,8 +341,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:black;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="logo.png" alt="" width="30" height="24"
-                    class="d-inline-block align-text-top">
+                <img src="logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
                 tinyurls.tech
             </a>
         </div>
@@ -355,7 +363,6 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#">Link Customization</a></li>
-                            <li><a class="dropdown-item" href="#">Hotlink Protection</a></li>
                             <li><a class="dropdown-item" href="#">Cloudfare Protected Links</a></li>
                             <li><a class="dropdown-item" href="#">QR for Links</a></li>
 
@@ -380,7 +387,7 @@
                             Socials
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="https://git.vinaykumar.tech">About</a></li>
+                            <li><a class="dropdown-item" href="https://vkonline.live">About</a></li>
                             <li><a class="dropdown-item" href="https://www.instagram.com/vinay.kumar.ig/">Instagram</a>
                             </li>
                             <li><a class="dropdown-item" href="https://github.com/vinayislive">Github</a></li>
@@ -404,7 +411,7 @@
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
-  <div class="alert alert-success" role="alert">
+    <div class="alert alert-success" role="alert">
 
         <h4 class="alert-heading">Free Url Shortner!</h4>
         <!-- <p>The complete URL Shortener platform, Link Management, Link Analytics, Deep links, QR Codes
@@ -413,11 +420,11 @@
             Shorten, brand, manage, track, and share your links effortlessly.</p> -->
         <span id="element"></span>
     </div>
- <div>
-     <div class="wave"></div>
-     <div class="wave"></div>
-     <div class="wave"></div>
-  </div>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
     <main>
         <section class="url-shortener">
             <div class="input-container">
@@ -438,17 +445,17 @@
         </section>
 
     </main>
-    <div class="alert alert-success" role="alert">
+    <!-- <div class="alert alert-success" role="alert">
         <h4 class="alert-heading">Contact</h4>
-<!--         <p>Write us at "contact@vinaykumar.tech" -->
-<!--         </p> -->
-        <span id="element1"></span>
-    </div>
+                <p>Write us at "contact@vinaykumar.tech"
+            </p>
+    <span id="element1"></span>
+    </div> -->
     <footer class="footer">
         <div class="container text-center">
             <ul class="footer-links">
                 <li><a href="https://tinyurls.tech">Home</a></li>
-                <li><a href="https://git.vinaykumar.tech">About Developer</a></li>
+                <li><a href="https://vkonline.live">About Developer</a></li>
                 <li><a href="https://tinyurls.tech/contact.html">Contact</a></li>
             </ul>
             <p>&copy; 2024 tinyurls.tech | All rights reserved</p>
@@ -564,23 +571,23 @@
             document.getElementById('content').style.display = 'block';
         }, 1000);
     </script>
-     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
             strings: ['The complete URL Shortener platform, Link Management, Cloudfare Link Protection, Deep links, QR Code Generator, and Link in Bio. Shorten, manage, track, and share your links effortlessly.'],
-            typeSpeed: 50,
+            typeSpeed: 30,
         });
-         var typed = new Typed('#element1', {
-            strings: ['Write us at "hi@tinyurls.tech"'],
-            typeSpeed: 50,
-        });
-        document.addEventListener('contextmenu', event => {
-    event.preventDefault();
-});
+        // var typed = new Typed('#element1', {
+        //     strings: ['Write us at "hi@tinyurls.tech"'],
+        //     typeSpeed: 50,
+        // });
+        // document.addEventListener('contextmenu', event => {
+        //     event.preventDefault();
+        // });
 
-document.querySelectorAll('.disabled').forEach(element => {
-    element.style.pointerEvents = 'none';
-});
+        // document.querySelectorAll('.disabled').forEach(element => {
+        //     element.style.pointerEvents = 'none';
+        // });
     </script>
 </body>
 
